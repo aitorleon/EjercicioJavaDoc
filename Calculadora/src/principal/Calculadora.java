@@ -25,13 +25,17 @@ public class Calculadora{
                 resultado = operaciones.multiplicar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
             } else if (operacion.equalsIgnoreCase("/")){
+            	try {
                 resultado = operaciones.dividir(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
+            	}catch (ArithmeticException excepcion) {
+            		System.out.println("ERROR" + excepcion.getMessage());
+            	}
             } else if (operacion.equalsIgnoreCase("%")){
                 resultado = operaciones.resto(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
             } else {
-                System.out.println ("Operación no válida");
+                System.out.println ("Operaciï¿½n no vï¿½lida");
             }
         }   while (menu.repetir());
     }
